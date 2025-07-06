@@ -1,10 +1,41 @@
-﻿#include <iostream>
+﻿/**
+ * @brief DepegAlertSystem - Entry point for the high-performance stablecoin depeg risk analysis system.
+ * This main function performs the following key actions:
+
+ * 1. Initializes core components: configuration loader, data ingestors, analyzers, scorers, trackers, and storage.
+ * 2. Ingests real-time data asynchronously:
+ *     - Stablecoin prices from CoinGecko
+ *     - On-chain transaction data from Etherscan
+ *     - News sentiment data
+ 
+ * 3. Measures and logs latency for each stage using `PerformanceTracker`.
+ * 4. Processes and normalizes input data:
+ *     - Calculates price deviation from peg
+ *     - Constructs flow metrics using sentiment and dummy values for simulation
+ * 5. Performs risk analysis:
+ *     - Historical pattern matching
+ *     - Risk score computation
+ *     - Persistence of risk data in SQLite
+ * 6. Generates alerts if risk crosses threshold, with trigger factors.
+ 
+
+ * Performance Features:
+ * - Uses `std::async` to parallelize I/O-heavy operations (price/news/on-chain fetch).
+ * - Benchmarks each operation using `std::chrono`.
+ *
+ * Output:
+ * - Console logs for timing, risk scores, and alerts
+ * - SQLite entry of risk scores
+ *
+ */
+
+
+#include <iostream>
 #include <vector>
 #include <map>
 #include <thread>
 #include <chrono>
 #include <future>  // For async calls
-
 #include "../include/Config.hpp"
 #include "../include/DataIngestor.hpp"
 #include "../include/SentimentAnalyzer.hpp"
