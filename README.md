@@ -39,5 +39,6 @@ cmake .. -DCMAKE_TOOLCHAIN_FILE=C:/Users/<your-user>/vcpkg/scripts/buildsystems/
 cmake --build .
 
 ## Sample Output
-![image](https://github.com/user-attachments/assets/05636008-6045-44a1-bbc9-b7e49cd72712)
+![image](https://github.com/user-attachments/assets/e5d7bc5c-13c0-43a7-b319-b38d06268da1)
+
 
