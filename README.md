@@ -32,11 +32,11 @@ The system aims to:
 
 
 ## Commands for building
-git clone https://github.com/your-username/DepegAlertSystem.git
-cd DepegAlertSystem
-mkdir build && cd build
-cmake .. -DCMAKE_TOOLCHAIN_FILE=C:/Users/<your-user>/vcpkg/scripts/buildsystems/vcpkg.cmake
-cmake --build .
+- git clone https://github.com/your-username/DepegAlertSystem.git
+- cd DepegAlertSystem
+- mkdir build && cd build
+- cmake .. -DCMAKE_TOOLCHAIN_FILE=C:/Users/<your-user>/vcpkg/scripts/buildsystems/vcpkg.cmake
+- cmake --build .
 
 ## Sample Output
 ![image](https://github.com/user-attachments/assets/e5d7bc5c-13c0-43a7-b319-b38d06268da1)
