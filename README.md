@@ -12,35 +12,6 @@ The system aims to:
 
 ---
 
-##  Architecture Overview
-
-                       ┌────────────────────┐
-                       │  Config + Logger   │
-                       └────────┬───────────┘
-                                │
-                    ┌───────────▼──────────┐
-                    │   DataIngestor       │
-                    │ (CoinGecko, Etherscan)│
-                    └───────────┬──────────┘
-                                │
-        ┌────────────┬──────────▼─────────────┬─────────────┐
-        │            │                        │             │
- ┌──────▼─────┐┌─────▼───────┐        ┌───────▼──────┐┌─────▼──────┐
- │ Sentiment  ││ Pattern     │        │ RiskScorer   ││ TVLFetcher │
- │ Analyzer   ││ Analyzer    │        │ (Multi-factor)││ (optional)│
- └────┬───────┘└──────┬──────┘        └──────────────┘└────────────┘
-      │               │
-      └────┬──────────┴───────────────┐
-           ▼                          ▼
-   ┌──────────────┐         ┌────────────────────┐
-   │ AlertManager │         │ HistoricalStorage   │
-   └──────┬───────┘         └──────────┬──────────┘
-          │                            │
-          ▼                            ▼
-  ┌──────────────┐           ┌────────────────────┐
-  │ Risk Alerts  │           │ SQLite DB (risk.db)│
-  └──────────────┘           └────────────────────┘
-
 
 ##  Features
 - Real-time price fetch via [CoinGecko API]  
