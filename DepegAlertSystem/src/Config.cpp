@@ -1,5 +1,11 @@
 #include "../include/Config.hpp"
 
+/*
+    Config constructor:
+    - Initializes API keys for CoinGecko, Etherscan, NewsAPI, and The Graph.
+    - Sets the list of stablecoins to monitor (tether, usdc, dai).
+    - All values are hardcoded for demonstration or testing purposes.
+*/
 Config::Config() {
     coingecko_api_key = "CG-45Q75kQBEfyv7z5ZKitk4ve7";
     etherscan_api_key = "R6SAE2MMI2XVDZ1GBCP5HJDQH91623PM9M";
